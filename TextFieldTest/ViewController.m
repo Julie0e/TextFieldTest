@@ -10,20 +10,36 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+
+
+
 @end
 
 @implementation ViewController
 
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self.textField becomeFirstResponder];
+}
+
+
+-(IBAction)dismissKeyboard:(id)sender
+{
+    [self.textField resignFirstResponder];
+    
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+   
 }
 
 @end
